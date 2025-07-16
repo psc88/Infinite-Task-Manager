@@ -11,13 +11,15 @@ Task list application developed with Next.js, React and styled-components.
 ### Installation
 ```bash
 npm install
+# or
+npm i
 ```
 
 ### Development
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+The application will open automatically at [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Testing
 ```bash
