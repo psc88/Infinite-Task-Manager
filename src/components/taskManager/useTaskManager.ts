@@ -1,8 +1,8 @@
 import mockApiService from "@/mockApi/mockApi";
 import { useEffect, useState, useCallback, useRef } from "react";
-import { ITask, IUseListTaskReturn } from "./listTask.interface";
+import { ITask, IUseTaskManagerReturn } from "./taskManager.interface";
 
-export const useListTask = (): IUseListTaskReturn => {
+export const useTaskManager = (): IUseTaskManagerReturn => {
   const [tasks, setTasks] = useState<ITask[]>([]);
   const [loading, setLoading] = useState(false);
   const [initialLoading, setInitialLoading] = useState(true);
@@ -122,6 +122,7 @@ export const useListTask = (): IUseListTaskReturn => {
     canEdit,
     editText,
     containerRef,
+    fetchTasks: () => fetchTasks(1),
     handlers: {
       addTask,
       toggleTask,

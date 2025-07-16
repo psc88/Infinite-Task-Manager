@@ -1,5 +1,5 @@
-import { ListTask } from "@/components/listTask";
+import { TaskManager } from "@/components/taskManager";
 
 export default function HomePage() {
-  return <ListTask />;
+  return <TaskManager />;
 }

@@ -1,14 +1,14 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { ListTask } from "../ListTask";
-import { useListTask } from "../useListTask";
+import { TaskManager } from "../TaskManager";
+import { useTaskManager } from "../useTaskManager";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 
-vi.mock("../useListTask");
+vi.mock("../useTaskManager");
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const mockUseListTask = useListTask as any;
+const mockUseTaskManager = useTaskManager as any;
 
-describe("ListTask", () => {
+describe("TaskManager", () => {
   const mockTasks = [
     {
       id: "1",
@@ -32,7 +32,7 @@ describe("ListTask", () => {
   };
 
   beforeEach(() => {
-    mockUseListTask.mockReturnValue({
+    mockUseTaskManager.mockReturnValue({
       tasks: mockTasks,
       loading: false,
       initialLoading: false,
@@ -50,7 +50,7 @@ describe("ListTask", () => {
   });
 
   test("calls toggleTask when the checkbox is clicked", () => {
-    render(<ListTask />);
+    render(<TaskManager />);
 
     const checkbox = screen.getByTestId("checkbox-1");
     
@@ -60,7 +60,7 @@ describe("ListTask", () => {
   });
 
   test("renders the tasks correctly", () => {
-    render(<ListTask />);
+    render(<TaskManager />);
 
     expect(screen.getByText("Complete documentation")).toBeInTheDocument();
     expect(screen.getByText("Review code")).toBeInTheDocument();

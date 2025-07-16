@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 
-export const useHeaderListTask = (
+export const useTaskHeader = (
   onAddTask: (text: string) => Promise<void>
 ) => {
   const [newTaskText, setNewTaskText] = useState("");

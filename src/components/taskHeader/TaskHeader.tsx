@@ -1,6 +1,6 @@
 "use client";
 
-import { IHeaderListTaskProps } from "./headerListTask.interface";
+import { ITaskHeaderProps } from "./taskHeader.interface";
 import {
   SCButtonAddTask,
   SCFormAddTask,
@@ -13,17 +13,17 @@ import {
   SCTitleStats,
   SCWrapperAddTask,
   SCWrapperStatsNumbersTasks,
-} from "./headerListTask.styles";
-import { useHeaderListTask } from "./useHeaderListTask";
+} from "./taskHeader.styles";
+import { useTaskHeader } from "./usetaskHeader";
 
-export const HeaderListTask = ({
+export const TaskHeader = ({
   onAddTask,
   loading,
   totalTasks = 0,
   pendingTasks = 0,
-}: IHeaderListTaskProps) => {
+}: ITaskHeaderProps) => {
   const { newTaskText, setNewTaskText, isSubmitting, handleSubmit } =
-    useHeaderListTask(onAddTask);
+    useTaskHeader(onAddTask);
 
   return (
     <SCHeaderContainer>

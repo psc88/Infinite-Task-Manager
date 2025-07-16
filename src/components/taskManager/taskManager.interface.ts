@@ -6,7 +6,7 @@ export interface ITask {
   completed: boolean;
 }
 
-export interface IUseListTaskReturn {
+export interface IUseTaskManagerReturn {
   tasks: ITask[];
   loading: boolean;
   initialLoading: boolean;
@@ -17,6 +17,7 @@ export interface IUseListTaskReturn {
   containerRef: RefObject<HTMLDivElement | null>;
   totalTasks: number;
   pendingTasks: number;
+  fetchTasks: () => Promise<void>;
   handlers: {
     addTask: (value: string) => Promise<void>;
     toggleTask: (id: string) => void;

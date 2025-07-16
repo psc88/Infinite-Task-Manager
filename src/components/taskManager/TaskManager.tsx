@@ -1,6 +1,6 @@
 "use client";
 
-import { HeaderListTask } from "../headerListTask";
+import { TaskHeader } from "../taskHeader";
 import {
   SCRowContainer,
   SCListTaskContainer,
@@ -15,12 +15,12 @@ import {
   SCInputEdit,
   SCButton,
   SCEditButton,
-} from "./listTask.styles";
-import { useListTask } from "./useListTask";
+} from "./taskManager.styles";
+import { useTaskManager } from "./useTaskManager";
 import { EditIcon } from "../icons";
-import { ErrorListTask } from "../errorListTask";
+import { TaskError } from "../taskError";
 
-export const ListTask = () => {
+export const TaskManager = () => {
   const {
     tasks,
     loading,
@@ -33,7 +33,8 @@ export const ListTask = () => {
     handlers,
     totalTasks,
     pendingTasks,
-  } = useListTask();
+    fetchTasks,
+  } = useTaskManager();
 
   const {
     addTask,
@@ -47,14 +48,14 @@ export const ListTask = () => {
   // TODO: LIST VIRTUALIZATION COULD BE IMPLEMENTED
   return (
     <>
-      <HeaderListTask
+      <TaskHeader
         onAddTask={addTask}
         loading={loading}
         totalTasks={totalTasks}
         pendingTasks={pendingTasks}
       />
       {error ? (
-        <ErrorListTask error={error} />
+        <TaskError error={error} onRetry={fetchTasks} />
       ) : (
         <SCListTaskContainer>
           <SCCardListTask>
@@ -74,6 +75,7 @@ export const ListTask = () => {
                           onClick={() => toggleTask(task.id)}
                           data-testid={`checkbox-${task.id}`}
                         />
+                        {/* TODO: IF IT IS CHECKED, CAN I EDIT? */}
                         {canEdit === task.id ? (
                           <SCCanEditContainer>
                             <SCInputEdit

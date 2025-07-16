@@ -32,14 +32,14 @@ src/
 │   ├── layout.tsx         # Main layout
 │   └── page.tsx           # Main page
 ├── components/            # React components
-│   ├── errorListTask/     # Error component
-│   ├── headerListTask/    # Header with statistics
+│   ├── taskError/     # Error component
+│   ├── taskHeader/    # Header with statistics
 │   ├── icons/             # Custom icons
-│   └── listTask/          # Main task list
+│   └── taskManager/          # Main task list
 │       ├── __tests__/     # Component tests
-│       ├── ListTask.tsx   # Main component
-│       ├── useListTask.ts # Custom hook
-│       └── listTask.styles.ts # Styled-components styles
+│       ├── TaskManager.tsx   # Main component
+│       ├── useTaskManager.ts # Custom hook
+│       └── taskManager.styles.ts # Styled-components styles
 ├── mockApi/               # Mock API for development
 └── test/                  # Test configuration
 ```
