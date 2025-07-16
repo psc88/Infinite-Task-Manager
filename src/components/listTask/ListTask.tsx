@@ -43,7 +43,6 @@ export const ListTask = () => {
     setEditText,
   } = handlers;
 
-  // Calcular estadísticas
   const totalTasks = tasks.length;
   const pendingTasks = tasks.filter((task) => !task.completed).length;
 

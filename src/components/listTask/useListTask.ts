@@ -70,7 +70,6 @@ export const useListTask = (): IUseListTaskReturn => {
     }
   }, [loading, hasNextPage, currentPage, fetchTasks]);
 
-  // Handlers de edición
   const handleEdit = (task: ITask) => {
     setCanEdit(task.id);
     setEditText(task.text);
