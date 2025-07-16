@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📋 Task List - Next.js
 
-## Getting Started
+Task list application developed with Next.js, React and styled-components.
 
-First, run the development server:
+## 🚀 Quick Start
 
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Testing
+```bash
+npm test
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Main layout
+│   └── page.tsx           # Main page
+├── components/            # React components
+│   ├── errorListTask/     # Error component
+│   ├── headerListTask/    # Header with statistics
+│   ├── icons/             # Custom icons
+│   └── listTask/          # Main task list
+│       ├── __tests__/     # Component tests
+│       ├── ListTask.tsx   # Main component
+│       ├── useListTask.ts # Custom hook
+│       └── listTask.styles.ts # Styled-components styles
+├── mockApi/               # Mock API for development
+└── test/                  # Test configuration
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🧪 Testing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project uses **Vitest** and **React Testing Library** for testing:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Configuration**: `vitest.config.js` and `test/setup.ts`
+- **Tests**: Located in `__tests__/` within each component
+- **Run**: `npm test`
 
-## Deploy on Vercel
+### Test Example
+```typescript
+// Verifies that the mark task button works correctly
+test('marks a task as completed', async () => {
+  // ... test logic
+});
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Technologies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Next.js 14** - React framework
+- **React** - UI library
+- **Styled-components** - CSS-in-JS styling
+- **Vitest** - Testing framework
+- **React Testing Library** - Component testing
+
+## 📝 Features
+
+- ✅ Interactive task list
+- 📊 Real-time statistics
+- 🎨 Modern design with styled-components
+- ✏️ Edit functionality
+- 🧪 Automated tests
+- 📱 Responsive design

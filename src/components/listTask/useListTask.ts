@@ -41,6 +41,7 @@ export const useListTask = (): IUseListTaskReturn => {
     setError(null);
 
     try {
+      // TODO: COULD BE SAVED IN A LOCALSTORAGE OR BACKEND
       const newTask = await mockApiService.createTask(text);
       setTasks((prev: ITask[]) => [newTask as ITask, ...prev]);
     } catch (err) {
