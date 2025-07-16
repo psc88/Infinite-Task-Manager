@@ -12,12 +12,12 @@ describe("ListTask", () => {
   const mockTasks = [
     {
       id: "1",
-      text: "Completar documentación",
+      text: "Complete documentation",
       completed: false,
     },
     {
       id: "2",
-      text: "Revisar código",
+      text: "Review code",
       completed: true,
     },
   ];
@@ -49,7 +49,7 @@ describe("ListTask", () => {
     vi.clearAllMocks();
   });
 
-  test("llama a toggleTask cuando se hace click en el checkbox", () => {
+  test("calls toggleTask when the checkbox is clicked", () => {
     render(<ListTask />);
 
     const checkbox = screen.getByTestId("checkbox-1");
@@ -59,10 +59,10 @@ describe("ListTask", () => {
     expect(mockHandlers.toggleTask).toHaveBeenCalledWith("1");
   });
 
-  test("renderiza las tareas correctamente", () => {
+  test("renders the tasks correctly", () => {
     render(<ListTask />);
 
-    expect(screen.getByText("Completar documentación")).toBeInTheDocument();
-    expect(screen.getByText("Revisar código")).toBeInTheDocument();
+    expect(screen.getByText("Complete documentation")).toBeInTheDocument();
+    expect(screen.getByText("Review code")).toBeInTheDocument();
   });
 });
