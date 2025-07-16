@@ -1,6 +1,5 @@
 "use client";
 
-import { Fragment } from "react";
 import { HeaderListTask } from "../headerListTask";
 import {
   SCRowContainer,
@@ -73,6 +72,7 @@ export const ListTask = () => {
                         <SCCircleCheckbox
                           $checked={task.completed}
                           onClick={() => toggleTask(task.id)}
+                          data-testid={`checkbox-${task.id}`}
                         />
                         {canEdit === task.id ? (
                           <SCCanEditContainer>
