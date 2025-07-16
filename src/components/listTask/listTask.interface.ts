@@ -15,6 +15,8 @@ export interface IUseListTaskReturn {
   canEdit: string | null;
   editText: string;
   containerRef: RefObject<HTMLDivElement | null>;
+  totalTasks: number;
+  pendingTasks: number;
   handlers: {
     addTask: (value: string) => Promise<void>;
     toggleTask: (id: string) => void;

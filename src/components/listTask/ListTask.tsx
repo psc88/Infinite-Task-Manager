@@ -31,6 +31,8 @@ export const ListTask = () => {
     editText,
     containerRef,
     handlers,
+    totalTasks,
+    pendingTasks,
   } = useListTask();
 
   const {
@@ -42,9 +44,7 @@ export const ListTask = () => {
     setEditText,
   } = handlers;
 
-  const totalTasks = tasks.length;
-  const pendingTasks = tasks.filter((task) => !task.completed).length;
-
+  // TODO: LIST VIRTUALIZATION COULD BE IMPLEMENTED
   return (
     <>
       <HeaderListTask

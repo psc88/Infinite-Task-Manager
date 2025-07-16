@@ -2,6 +2,10 @@
 
 Task list application developed with Next.js, React and styled-components.
 
+## 📸 Screenshot
+
+![Task List App Screenshot](./image/imageProyect.png)
+
 ## 🚀 Quick Start
 
 ### Installation
@@ -72,3 +76,4 @@ test('marks a task as completed', async () => {
 - ✏️ Edit functionality
 - 🧪 Automated tests
 - 📱 Responsive design
+

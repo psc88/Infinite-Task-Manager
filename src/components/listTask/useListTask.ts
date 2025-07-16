@@ -18,6 +18,7 @@ export const useListTask = (): IUseListTaskReturn => {
     setLoading(true);
     setError(null);
 
+    // TODO: A QUERY THAT CALLS A SERVICE COULD BE ISOLATED FOR GREATER CONTROL
     try {
       const response = await mockApiService.fetchTasks({ page, limit: 10 });
 
@@ -116,6 +117,8 @@ export const useListTask = (): IUseListTaskReturn => {
     initialLoading,
     error,
     hasNextPage,
+    totalTasks: tasks.length,
+    pendingTasks: tasks.filter((task) => !task.completed).length,
     canEdit,
     editText,
     containerRef,
